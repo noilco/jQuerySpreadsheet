@@ -1,0 +1,79 @@
+.spreadsheet {
+  border-spacing: 0;
+  padding: 0;
+}
+.spreadsheet .col:first-child {
+  width: 20px;
+  border-right: 1px solid #c0c0c0;
+}
+.spreadsheet .col {
+  width: 80px;
+  height: 15px;
+  border-top: 1px solid #c0c0c0;
+  border-left: 1px solid #c0c0c0;
+  background-color: #a0a0a0;
+}
+
+.spreadsheet .row-header {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #c0c0c0;
+  background-color: #a0a0a0;
+}
+
+.spreadsheet .cell:first-child {
+  border-right: 1px solid #c0c0c0;
+}
+.spreadsheet .cell {
+  width: 20px;
+  height: 15px;
+  border-top: 1px solid #c0c0c0;
+  border-left: 1px solid #c0c0c0;
+  position: relative;
+}
+
+.spreadsheet .row .cell:last-child {
+  border-right: 1px solid #c0c0c0;
+}
+
+.spreadsheet .row:last-child .cell {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.spreadsheet .cell-text {
+  width: 81px;
+  height: 20px;
+  border: none;
+  resize: none;
+  overflow: hidden;
+  padding-top: 0;
+  padding-left: 2px;
+  margin: 0;
+  display: block;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  position: absolute;
+  top: 2;
+  left: 0;
+  z-index: 10;
+}
+
+.spreadsheet .cell-text:focus {
+  border: none;
+}
+
+.spreadsheet .cell-cover {
+  width: 77px;
+  height: 18px;
+  margin: 0;
+  padding-top: 0;
+  padding-left: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  word-wrap: break-word;
+  background-color: #ffffff;
+}
