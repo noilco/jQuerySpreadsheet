@@ -80,7 +80,7 @@ var ColumnName = ["A", "B", "C", "D", "F", "G", "H", "I", "J", "K", "L", "M", "N
             resize: function(event, ui) {
                 // sbstraction cover div height size cause div hide table borders
                 var $cellCover = $(this).parent().find('div.cell-cover');
-                var height = parseInt($cellCover.css('height').replace('px', '')) - 4;
+                var height = parseInt($cellCover.css('height').replace('px', '')) - 5;
                 $cellCover.css('height', height + 'px');
             }
         };
