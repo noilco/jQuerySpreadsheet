@@ -41,8 +41,8 @@
 }
 
 .spreadsheet .cell-text {
-  width: 81px;
-  height: 20px;
+  width: 82px;
+  height: 23px;
   border: none;
   resize: none;
   overflow: hidden;
@@ -55,9 +55,16 @@
   -moz-box-shadow: none;
   box-shadow: none;
   position: absolute;
-  top: 2;
+  top: 0;
   left: 0;
   z-index: 10;
+}
+.spreadsheet tr:last-child .cell-text {
+  height: 22px;
+}
+
+.spreadsheet tr td:last-child .cell-text {
+  width: 81px;
 }
 
 .spreadsheet .cell-text:focus {
@@ -65,8 +72,8 @@
 }
 
 .spreadsheet .cell-cover {
-  width: 77px;
-  height: 18px;
+  width: 80px;
+  height: 23px;
   margin: 0;
   padding-top: 0;
   padding-left: 2px;
@@ -76,4 +83,12 @@
   z-index: 20;
   word-wrap: break-word;
   background-color: #ffffff;
+}
+
+.spreadsheet tr:last-child .cell-cover {
+  height: 22px;
+}
+
+.spreadsheet tr td:last-child .cell-cover {
+  width: 79px;
 }

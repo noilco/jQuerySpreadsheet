@@ -79,9 +79,14 @@ var ColumnName = ["A", "B", "C", "D", "F", "G", "H", "I", "J", "K", "L", "M", "N
             handles: 's',
             resize: function(event, ui) {
                 // sbstraction cover div height size cause div hide table borders
+                /*
                 var $cellCover = $(this).parent().find('div.cell-cover');
-                var height = parseInt($cellCover.css('height').replace('px', '')) - 5;
+                var height = parseInt($cellCover.css('height').replace('px', '')) - 1;
                 $cellCover.css('height', height + 'px');
+                */
+                var $cellText = $(this).parent().find('textarea.cell-text');
+                var height = parseInt($cellText.css('height').replace('px', '')) - 4;
+                $cellText.css('height', height + 'px');
             }
         };
     
@@ -93,6 +98,7 @@ var ColumnName = ["A", "B", "C", "D", "F", "G", "H", "I", "J", "K", "L", "M", "N
             $clone.find('th.row-header').text(i + 1)
                 .resizable(rowResizableOpts)
                 .attr('data-spreadsheet-rownum', i + 1);
+            $clone.find('td.cell').attr('data-spreadsheet-rownum', i + 1);
             $tBody.append($clone);
         }
 
@@ -108,11 +114,12 @@ var ColumnName = ["A", "B", "C", "D", "F", "G", "H", "I", "J", "K", "L", "M", "N
             handles: 'e',
             resize: function(event, ui) {
                 // addition textarea height size cause be smaller than td height
-                var colnum = $(this).closest('tr').index($(this).closest('td')).index() + 1;
+                var colnum = $(this).closest('th').index();
                 var $cellText = $(this).closest('.spreadsheet')
                     .find('[data-spreadsheet-colnum="' + colnum + '"] textarea.cell-text');
-                var height = parseInt($cellText.css('height').replace('px', '')) + 5;
+                var height = parseInt($cellText.css('height').replace('px', '')) - 3;
                 $cellText.css('height', height + 'px');
+                $cellText.find(':last-child').css('height', (height - 1) + 'px')
             }
         };
         // add column
@@ -135,7 +142,7 @@ var ColumnName = ["A", "B", "C", "D", "F", "G", "H", "I", "J", "K", "L", "M", "N
         var actualLength = 0;
         for (var i = 0; i < text.length; i++) {
             var char = text.charAt(i);
-            actualLength += encodeURI(str).split(/%..|./).length - 1;
+            actualLength += encodeURI(char).split(/%..|./).length - 1;
         }
         return text.length != actualLength;
     }

@@ -2,3 +2,4 @@ node_modules
 .vscode
 package-lock.json
 start.js
+package.json
